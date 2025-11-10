@@ -9,4 +9,4 @@ then run
 
 to yoink:
 
-Usage: ./yoink.sh <package_name> <config_file_path>
+Usage: `./yoink.sh <package_name> <config_file_path>`
