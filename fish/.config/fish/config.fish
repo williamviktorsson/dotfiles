@@ -67,7 +67,7 @@ if status is-interactive
 
     # Editor shortcuts (the `hx` function will be autoloaded)
     alias h hx
-    alias n hx
+    alias n nautilus
 
     # Other aliases
     alias decompress "tar -xzf"

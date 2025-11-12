@@ -1,1 +1,4 @@
 theme = "monokai_pro_ristretto"
+
+[editor.soft-wrap]
+enable = true
