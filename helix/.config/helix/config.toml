@@ -1,4 +1,12 @@
 theme = "monokai_pro_ristretto"
 
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 3000
+
 [editor.soft-wrap]
 enable = true
+
+[keys.normal]
+"C-f" = ":run-shell-command tmux neww tmux-sessionizer"

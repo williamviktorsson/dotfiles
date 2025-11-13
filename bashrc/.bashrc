@@ -12,3 +12,5 @@ source ~/.local/share/omarchy/default/bash/rc
 
 alias hx=helix
 alias n=helix
+
+. "$HOME/.local/share/../bin/env"
