@@ -58,4 +58,6 @@ fi
 
 chmod +x ~/.local/scripts/tmux-sessionizer
 
+systemctl --user enable hyprsunset && systemctl --user start hyprsunset
+
 print_header "Setup Complete!"
