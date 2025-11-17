@@ -42,6 +42,9 @@ else
         fi
     done
 fi
+
+cd ./helix/.config/helix && npm i
+
 print_success "All installation scripts have been processed."
 
 # --- 2. Run the Stow Script ---

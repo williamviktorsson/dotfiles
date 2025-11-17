@@ -10,3 +10,4 @@ enable = true
 
 [keys.normal]
 "C-f" = ":run-shell-command tmux neww tmux-sessionizer"
+"S-tab" = "jump_backward"

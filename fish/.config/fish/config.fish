@@ -74,6 +74,7 @@ if status is-interactive
     alias ff "fzf --preview 'bat --style=numbers --color=always {}'"
 
     set PATH "$PATH":"$HOME/.local/scripts/"
+    set PATH "$PATH":"$HOME/.cargo/bin"
     bind \cf tmux-sessionizer
     bind \ch "tmux-sessionizer -s 0"
 end
