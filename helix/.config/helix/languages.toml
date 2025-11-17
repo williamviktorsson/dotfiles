@@ -35,7 +35,12 @@ formatter = { command = 'prettier', args = ["--parser", "yaml"] }
 [[language]]
 name = "python"
 auto-format = true
-language-servers = ["ruff"]
+language-servers = [
+  "ruff",
+  { name = "jedi", except-features = [
+    "diagnostics",
+  ] },
+]
 formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]

@@ -47,4 +47,6 @@ pacman -S ruff --noconfirm --needed # python formatter
 
 npm i -g prettier
 
-npm install -g basedpyright
+# npm install -g basedpyright
+
+pacman -S jedi-language-server
