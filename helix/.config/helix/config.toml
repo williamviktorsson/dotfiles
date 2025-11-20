@@ -11,3 +11,24 @@ enable = true
 [keys.normal]
 "C-f" = ":run-shell-command tmux neww tmux-sessionizer"
 "S-tab" = "jump_backward"
+x = "select_line_below"
+X = "select_line_above"
+C-g = [
+  ":write-all",
+  ":new",
+  ":insert-output lazygit",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all",
+] # lazygit
+[editor.indent-guides]
+render = true
+
+[keys.select.ret]
+# scooter integration
+s = [
+  ":write-all",
+  ":insert-output scooter --no-stdin >/dev/tty",
+  ":redraw",
+  ":reload-all",
+]

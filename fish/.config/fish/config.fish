@@ -77,4 +77,6 @@ if status is-interactive
     set PATH "$PATH":"$HOME/.cargo/bin"
     bind \cf tmux-sessionizer
     bind \ch "tmux-sessionizer -s 0"
+    bind \cz 'fg 2>/dev/null; commandline -f repaint' # CTRL + Z to return to sleeping helix
+
 end
