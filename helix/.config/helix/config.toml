@@ -1,5 +1,8 @@
 theme = "monokai_pro_ristretto"
 
+[editor]
+mouse = true
+
 [editor.auto-save]
 focus-lost = true
 after-delay.enable = true
@@ -13,6 +16,8 @@ enable = true
 "S-tab" = "jump_backward"
 x = "select_line_below"
 X = "select_line_above"
+
+# lazygit
 C-g = [
   ":write-all",
   ":new",
@@ -20,15 +25,28 @@ C-g = [
   ":buffer-close!",
   ":redraw",
   ":reload-all",
-] # lazygit
-[editor.indent-guides]
-render = true
+]
 
-[keys.select.ret]
-# scooter integration
-s = [
+# scooter integrxation
+C-r = [
   ":write-all",
   ":insert-output scooter --no-stdin >/dev/tty",
   ":redraw",
   ":reload-all",
+]
+
+[editor.indent-guides]
+render = true
+
+
+# yazi
+[keys.normal.space]
+e = [
+  ":sh rm -f /tmp/unique-file-h21a434",
+  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+  ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+  ":open %sh{cat /tmp/unique-file-h21a434}",
+  ":redraw",
+  ':set mouse false',
+  ':set mouse true',
 ]

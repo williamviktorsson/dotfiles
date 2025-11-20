@@ -26,6 +26,7 @@ language-servers = [
   # "mdx-language-server",
 ] #harper-ls
 formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+comment-tokens = ["-", "+", "*", "- [ ]", ">"]
 
 [[language]]
 name = "yaml"
