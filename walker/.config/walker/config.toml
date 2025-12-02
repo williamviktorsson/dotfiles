@@ -10,13 +10,13 @@ hide_action_hints = true                                                    # gl
 [keybinds]
 quick_activate = []
 
+[columns]
+symbols = 1 # providers to be queried by default
+
 [providers]
-max_results = 256 # 256 should be enough for everyone
-default = [
-  "desktopapplications",
-  "websearch",
-] # providers to be queried by default
-empty = ["menus:omarchy"] # providers when empty
+max_results = 256                              # 256 should be enough for everyone
+default = ["desktopapplications", "websearch"]
+empty = ["menus:omarchy"]                      # providers when empty
 
 [[providers.prefixes]]
 prefix = "/"
