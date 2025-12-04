@@ -30,6 +30,10 @@
   opacity: 0.25;
 }
 
+#workspaces button.active {
+  opacity: 1;
+}
+
 #workspaces button:not(.empty) {
   font-weight: 900;
 }
