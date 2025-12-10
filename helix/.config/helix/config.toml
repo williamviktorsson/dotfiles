@@ -2,6 +2,10 @@ theme = "monokai_pro_ristretto"
 
 [editor]
 mouse = true
+# end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.auto-save]
 focus-lost = true
@@ -10,6 +14,10 @@ after-delay.timeout = 3000
 
 [editor.soft-wrap]
 enable = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
 
 [keys.normal]
 "C-f" = ":run-shell-command tmux neww tmux-sessionizer"

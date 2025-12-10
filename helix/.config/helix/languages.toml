@@ -13,6 +13,14 @@ environment = { "RUST_LOG" = "warn" }
 [language-server.ruff.config.settings]
 logLevel = "warn"
 
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+[language-server.ty.config]
+inlayHints.callArgumentNames = false
+experimental.rename = true
+experimental.autoImport = true
 
 # [language-server.svelteserver.config.configuration.svelte]
 # logErrorsOnly = true
@@ -36,12 +44,7 @@ formatter = { command = 'prettier', args = ["--parser", "yaml"] }
 [[language]]
 name = "python"
 auto-format = true
-language-servers = [
-  "ruff",
-  { name = "jedi", except-features = [
-    "diagnostics",
-  ] },
-]
+language-servers = ["ruff", { name = "ty", except-features = ["diagnostics"] }]
 formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]

@@ -50,3 +50,5 @@ npm i -g prettier
 # npm install -g basedpyright
 
 pacman -S jedi-language-server
+
+uv tool install ty@latest
