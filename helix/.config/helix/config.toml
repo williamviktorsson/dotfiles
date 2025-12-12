@@ -16,8 +16,8 @@ after-delay.timeout = 3000
 enable = true
 
 [editor.lsp]
-display-inlay-hints = true
-display-messages = true
+# display-inlay-hints = true
+# display-messages = true (true is default)
 
 [keys.normal]
 "C-f" = ":run-shell-command tmux neww tmux-sessionizer"

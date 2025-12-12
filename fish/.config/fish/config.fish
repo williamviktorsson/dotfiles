@@ -18,6 +18,7 @@ end
 set -q EDITOR; or set -gx EDITOR helix
 set -gx SUDO_EDITOR "$EDITOR"
 set -gx BAT_THEME ansi
+set -gx PYTHONPATH (pip show pip | grep "Location" | string split ": " -f2)
 
 # =============================================================================
 # Interactive-Only Configuration
