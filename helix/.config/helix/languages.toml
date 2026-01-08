@@ -22,6 +22,8 @@ inlayHints.callArgumentNames = false
 experimental.rename = true
 completions.autoImport = true
 
+[language-server.basedpyright.config.python.analysis]
+typeCheckingMode = "standard"
 
 # [language-server.svelteserver.config.configuration.svelte]
 # logErrorsOnly = true
@@ -45,14 +47,15 @@ formatter = { command = 'prettier', args = ["--parser", "yaml"] }
 [[language]]
 name = "python"
 auto-format = true
-# scope = "source.python"
-language-servers = [
-  "ruff",
-  { name = "jedi", except-features = [
-    "diagnostics",
-  ] },
-]
-# language-servers = ["ruff", { name = "ty" }]
+scope = "source.python"
+# language-servers = [
+#   "ruff",
+#   { name = "jedi", except-features = [
+#     "diagnostics",
+#   ] },
+# ]
+# language-servers = ["ruff", "ty"]
+language-servers = ["basedpyright", "ruff"]
 formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]
