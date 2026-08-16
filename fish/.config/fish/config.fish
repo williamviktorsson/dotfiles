@@ -18,7 +18,7 @@ end
 set -q EDITOR; or set -gx EDITOR helix
 set -gx SUDO_EDITOR "$EDITOR"
 set -gx BAT_THEME ansi
-set -gx PYTHONPATH (pip show pip | grep "Location" | string split ": " -f2)
+# set -gx PYTHONPATH (pip show pip | grep "Location" | string split ": " -f2)
 
 # =============================================================================
 # Interactive-Only Configuration
@@ -80,4 +80,31 @@ if status is-interactive
     bind \ch "tmux-sessionizer -s 0"
     bind \cz 'fg 2>/dev/null; commandline -f repaint' # CTRL + Z to return to sleeping helix
 
+end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/wv/miniconda3/bin/conda
+    eval /home/wv/miniconda3/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f "/home/wv/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/wv/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH /home/wv/miniconda3/bin $PATH
+    end
+end
+# <<< conda initialize <<<
+
+# Re-assert conda env's bin before mise shims on every prompt.
+# Needed because mise's fish_prompt hook re-runs mise hook-env (which puts
+# mise shims first), overriding whatever conda activate just prepended.
+# Defining this AFTER mise activate ensures it fires after mise's hook.
+function __conda_priority --on-event fish_prompt
+    if set -q CONDA_PREFIX; and test "$CONDA_DEFAULT_ENV" != "base"
+        set -l conda_bin "$CONDA_PREFIX/bin"
+        if test "$PATH[1]" != "$conda_bin"
+            set -gx PATH (string match -rv "^$conda_bin\$" -- $PATH)
+            set -gx PATH $conda_bin $PATH
+        end
+    end
 end
